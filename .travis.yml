@@ -17,8 +17,10 @@ before_install:
   - sudo service elasticsearch start
   - echo $PATH
   - composer global require "phpunit/phpunit=4.8.*|5.7.*"
+  - phpenv rehash
   - echo $PATH
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - ls -la $HOME/.composer/vendor/bin
   - echo $PATH
   - which phpunit
   - phpunit --version
