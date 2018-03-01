@@ -1,0 +1,18 @@
+language: php
+
+matrix:
+  include:
+    - php: 7.2
+
+before_install:
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - composer global require "phpunit/phpunit=4.8.*|5.7.*"
+  - which phpunit
+  - phpunit --version
+
+script:
+  - |
+    PHPUNIT_VERSION=$(phpunit --version | egrep -o '[0-9]+\.[0-9]+(\.[0-9]+)?')
+    if [[ ${PHPUNIT_VERSION:0:2} != "5." ]]; then
+      exit 1
+    fi
