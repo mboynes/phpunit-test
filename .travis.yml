@@ -6,7 +6,6 @@ matrix:
 
 before_install:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - composer global require "phpunit/phpunit=4.8.*|5.7.*"
   - which phpunit
   - phpunit --version
 
