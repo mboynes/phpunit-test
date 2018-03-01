@@ -11,10 +11,15 @@ branches:
     - master
 
 before_install:
-  - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - curl -O -L https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-$ES_VERSION.deb && dpkg -i --force-confnew elasticsearch-$ES_VERSION.deb
-  # - service elasticsearch start
+  - echo $PATH
+  - curl -O -L https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-$ES_VERSION.deb && sudo dpkg -i --force-confnew elasticsearch-$ES_VERSION.deb
+  - echo $PATH
+  - sudo service elasticsearch start
+  - echo $PATH
   - composer global require "phpunit/phpunit=4.8.*|5.7.*"
+  - echo $PATH
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - echo $PATH
   - which phpunit
   - phpunit --version
 
