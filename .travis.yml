@@ -15,7 +15,7 @@ before_install:
   # - curl -O -L https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-$ES_VERSION.deb && sudo dpkg -i --force-confnew elasticsearch-$ES_VERSION.deb
   # - echo $PATH
   # - sudo service elasticsearch start
-  - echo $PATH
+  - sudo echo $PATH
   - composer global require "phpunit/phpunit=4.8.*|5.7.*"
   - phpenv rehash
   - echo $PATH
