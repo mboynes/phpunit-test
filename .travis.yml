@@ -3,9 +3,12 @@ language: php
 matrix:
   include:
     - php: 7.2
+      env: WP_VERSION=latest ES_VERSION=2.0.2
+  fast_finish: true
 
 before_install:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - composer global require "phpunit/phpunit=4.8.*|5.7.*"
   - which phpunit
   - phpunit --version
 
